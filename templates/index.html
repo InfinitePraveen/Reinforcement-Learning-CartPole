@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartPole RL Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="container">
+    <header>
+        <p class="eyebrow">REINFORCEMENT LEARNING</p>
+        <h1>CartPole Q-learning Demo</h1>
+        <p class="intro">Run the learned CPU-friendly Q-learning policy one environment step at a time.</p>
+    </header>
+
+    <section class="card">
+        <div class="track">
+            <div id="cart" class="cart">
+                <div id="pole" class="pole"></div>
+                <div class="wheel left"></div>
+                <div class="wheel right"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn">Start Episode</button>
+            <button id="stepBtn" disabled>Next Step</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+
+        <div class="stats">
+            <div><span>Step</span><strong id="steps">0</strong></div>
+            <div><span>Reward</span><strong id="reward">0</strong></div>
+            <div><span>Last Action</span><strong id="action">-</strong></div>
+            <div><span>Status</span><strong id="status">Ready</strong></div>
+        </div>
+    </section>
+
+    <section class="card explanation">
+        <h2>How it works</h2>
+        <p>The notebook trains a tabular Q-learning agent after discretizing the four continuous CartPole observations. This web demo loads the saved Q-table and chooses the highest-value action at every step.</p>
+        <p><strong>Action 0:</strong> push left &nbsp; <strong>Action 1:</strong> push right</p>
+    </section>
+
+    <footer>
+        <span>Built by Praveen Kumar</span>
+        <a href="https://github.com/InfinitePraveen" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/infinitepraveen/" target="_blank">LinkedIn</a>
+    </footer>
+</main>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
